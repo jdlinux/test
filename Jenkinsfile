@@ -1,11 +1,6 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'ifconfig'
-		sh 'echo 1 > test.txt'
-            }
-        }
+node {
+    checkout scm
+    docker.image('ubuntu:16.04)
+        sh 'uname -a'
     }
 }
